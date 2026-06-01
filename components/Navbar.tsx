@@ -31,7 +31,7 @@ export default function Navbar() {
         <a href="#">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/Bimbingan_Saham_White_Logo.png"
+            src="/images/Bimbingan Saham White Logo.png"
             alt="Bimbingan Saham"
             className="h-10 w-auto"
           />
