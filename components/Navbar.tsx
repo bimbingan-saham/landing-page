@@ -33,7 +33,7 @@ export default function Navbar() {
           <img
             src="/images/Bimbingan Saham White Logo.png"
             alt="Bimbingan Saham"
-            className="h-10 w-auto"
+            className="h-12 w-48 object-contain"
           />
         </a>
 
