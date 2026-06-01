@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const links = ["Tentang", "Kelas", "FAQ"];
 const socialLinks = [
@@ -30,12 +29,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-1">
-            <Image
-              src="/images/Logo Dark Mode Navy Horizontal.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/Bimbingan Saham White Logo.png"
               alt="Bimbingan Saham"
-              width={150}
-              height={38}
-              className="h-9 w-auto object-contain mb-4"
+              className="h-16 w-56 object-contain mb-4"
             />
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Dibimbing Sampai Jago.
