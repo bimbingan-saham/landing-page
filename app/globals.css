@@ -13,8 +13,10 @@ html {
 }
 
 body {
-  color: #172A5B;
-  background: #172A5B;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d1e4a 0%, #172A5B 50%, #3d0f0f 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,4 +55,20 @@ body {
 
 .accordion-content.open {
   max-height: 500px;
+}
+
+/* Infinite stock ticker */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 36s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
 }

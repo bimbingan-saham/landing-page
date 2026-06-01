@@ -25,7 +25,7 @@ export default function AboutInstructor() {
                 {/* Credential badge */}
                 <div className="absolute bottom-5 left-5 right-5">
                   <div className="bg-[#172A5B]/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10">
-                    <p className="text-white font-semibold text-sm">S3 Ekonomi-Akuntansi (Kandidat Doktor)</p>
+                    <p className="text-white font-semibold text-sm">Dosen Ekonomi &amp; Akuntansi</p>
                     <p className="text-white/65 text-xs mt-0.5">Akademisi &amp; Praktisi Investasi Saham</p>
                   </div>
                 </div>
@@ -50,10 +50,9 @@ export default function AboutInstructor() {
             <ScrollReveal delay={2}>
               <p className="text-slate-600 text-base leading-relaxed mb-6">
                 Seorang akademisi sekaligus praktisi investasi saham. Dengan latar
-                belakang pendidikan Ekonomi-Akuntansi dan saat ini menempuh S3
-                Ekonomi-Akuntansi, Beryansyah mengajarkan investasi saham dengan
-                pendekatan ilmiah, terstruktur, dan mudah dipahami — bahkan untuk
-                pemula sekalipun.
+                belakang pendidikan Ekonomi-Akuntansi, Beryansyah mengajarkan
+                investasi saham dengan pendekatan ilmiah, terstruktur, dan mudah
+                dipahami — bahkan untuk pemula sekalipun.
               </p>
             </ScrollReveal>
 
@@ -84,7 +83,7 @@ export default function AboutInstructor() {
             <ScrollReveal delay={4}>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { num: "S3", label: "Ekonomi-Akuntansi" },
+                  { num: "M.Ak", label: "Ekonomi-Akuntansi" },
                   { num: "2+", label: "Kelas Tersedia" },
                   { num: "∞", label: "Garansi Bimbingan" },
                 ].map((stat, i) => (

@@ -29,13 +29,15 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex-shrink-0">
+        <a href="#" className="flex-shrink-0 bg-transparent">
           <Image
             src="/images/Logo Dark Mode Navy Horizontal.png"
             alt="Bimbingan Saham"
-            width={160}
-            height={40}
-            className="h-9 w-auto object-contain"
+            width={200}
+            height={48}
+            className="h-12 w-auto object-contain bg-transparent"
+            style={{ background: "transparent" }}
+            placeholder="empty"
             priority
           />
         </a>

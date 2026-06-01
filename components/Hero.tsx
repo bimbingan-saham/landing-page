@@ -30,7 +30,7 @@ export default function Hero() {
 
             <ScrollReveal delay={2}>
               <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-lg">
-                Belajar saham langsung dari Dosen S3 Ekonomi-Akuntansi. Dari 0
+                Belajar saham langsung dari Dosen Ekonomi &amp; Akuntansi. Dari 0
                 sampai tau cara mainnya — dengan{" "}
                 <span className="text-white font-semibold">garansi bimbingan seumur hidup.</span>
               </p>
@@ -93,7 +93,7 @@ export default function Hero() {
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3">
                     <p className="text-white font-semibold text-sm">Beryansyah., S. Ak., S. Kom., M. Ak</p>
-                    <p className="text-white/65 text-xs mt-0.5">Dosen &amp; Kandidat Doktor Ekonomi-Akuntansi</p>
+                    <p className="text-white/65 text-xs mt-0.5">Dosen Ekonomi &amp; Akuntansi</p>
                   </div>
                 </div>
 
