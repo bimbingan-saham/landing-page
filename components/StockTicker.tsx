@@ -1,5 +1,3 @@
-"use client";
-
 import ScrollReveal from "./ScrollReveal";
 
 interface Stock {
@@ -7,15 +5,16 @@ interface Stock {
   entryPrice: number;
   exitPrice: number;
   pct: number;
+  color: string;
 }
 
 const stocks: Stock[] = [
-  { code: "BUMI", entryPrice: 115,  exitPrice: 422,  pct: 267 },
-  { code: "KETR", entryPrice: 590,  exitPrice: 1480, pct: 151 },
-  { code: "CUAN", entryPrice: 1890, exitPrice: 2280, pct: 21  },
-  { code: "TOBA", entryPrice: 860,  exitPrice: 960,  pct: 12  },
-  { code: "APEX", entryPrice: 238,  exitPrice: 314,  pct: 32  },
-  { code: "GTSI", entryPrice: 302,  exitPrice: 344,  pct: 14  },
+  { code: "BUMI", entryPrice: 115,  exitPrice: 422,  pct: 267, color: "#e74c3c" },
+  { code: "KETR", entryPrice: 590,  exitPrice: 1480, pct: 151, color: "#3498db" },
+  { code: "CUAN", entryPrice: 1890, exitPrice: 2280, pct: 21,  color: "#2ecc71" },
+  { code: "TOBA", entryPrice: 860,  exitPrice: 960,  pct: 12,  color: "#f39c12" },
+  { code: "APEX", entryPrice: 238,  exitPrice: 314,  pct: 32,  color: "#9b59b6" },
+  { code: "GTSI", entryPrice: 302,  exitPrice: 344,  pct: 14,  color: "#1abc9c" },
 ];
 
 function fmt(n: number) {
@@ -32,24 +31,12 @@ function TickerCard({ stock }: { stock: Stock }) {
         minWidth: "220px",
       }}
     >
-      {/* Logo */}
-      <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-white/10 flex items-center justify-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`https://assets.stockbit.com/securities/logos/${stock.code}.png`}
-          alt={stock.code}
-          width={40}
-          height={40}
-          className="w-full h-full object-cover rounded-full"
-          onError={(e) => {
-            const target = e.currentTarget;
-            target.style.display = "none";
-            const parent = target.parentElement;
-            if (parent) {
-              parent.innerHTML = `<span class="text-white font-bold text-xs">${stock.code[0]}</span>`;
-            }
-          }}
-        />
+      {/* Initials avatar */}
+      <div
+        className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-xs"
+        style={{ background: stock.color }}
+      >
+        {stock.code.slice(0, 2)}
       </div>
 
       {/* Info */}
@@ -64,10 +51,7 @@ function TickerCard({ stock }: { stock: Stock }) {
 
       {/* Percentage */}
       <div className="ml-auto flex-shrink-0">
-        <span
-          className="text-sm font-bold whitespace-nowrap"
-          style={{ color: "#4ade80" }}
-        >
+        <span className="text-sm font-bold whitespace-nowrap" style={{ color: "#4ade80" }}>
           +{stock.pct}%
         </span>
       </div>
@@ -88,17 +72,14 @@ export default function StockTicker() {
         </ScrollReveal>
       </div>
 
-      {/* Fading edges */}
-      <div className="relative">
-        <div
-          className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #0d1e4a, transparent)" }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #3d0f0f, transparent)" }}
-        />
-
+      {/* mask-image fades edges regardless of background color */}
+      <div
+        className="relative"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+          maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
+        }}
+      >
         <div className="ticker-track">
           {doubled.map((stock, i) => (
             <TickerCard key={`${stock.code}-${i}`} stock={stock} />

@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#172A5B] flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen bg-transparent flex items-center pt-16 overflow-hidden">
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#1e3a7a_0%,_transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#0F1E42_0%,_transparent_60%)] pointer-events-none" />

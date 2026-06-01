@@ -26,16 +26,16 @@ function CheckIcon() {
 
 export default function Classes() {
   return (
-    <section id="kelas" className="bg-slate-50 py-20 px-5">
+    <section id="kelas" className="bg-transparent py-20 px-5">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal className="text-center mb-14">
-          <span className="inline-block px-3 py-1 bg-[#172A5B]/10 border border-[#172A5B]/20 rounded-full text-xs font-semibold text-[#172A5B] uppercase tracking-widest mb-4">
+          <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-white/80 uppercase tracking-widest mb-4">
             Program Belajar
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#172A5B] mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
             Pilih Kelasmu
           </h2>
-          <p className="text-slate-500 text-lg max-w-xl mx-auto">
+          <p className="text-white/60 text-lg max-w-xl mx-auto">
             Mulai dari yang gratis untuk kenalan, atau langsung masuk kelas intensif untuk hasil nyata.
           </p>
         </ScrollReveal>
@@ -44,34 +44,37 @@ export default function Classes() {
 
           {/* Free class */}
           <ScrollReveal delay={1}>
-            <div className="bg-white rounded-2xl border border-slate-200 p-7 h-full flex flex-col shadow-sm hover:shadow-lg hover:shadow-slate-200/60 transition-all duration-300">
+            <div
+              className="rounded-2xl p-7 h-full flex flex-col hover:-translate-y-1 transition-all duration-300"
+              style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)" }}
+            >
               <div className="mb-5">
-                <span className="inline-block px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-wide">
+                <span className="inline-block px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold rounded-full uppercase tracking-wide">
                   Gratis
                 </span>
               </div>
-              <h3 className="text-[#172A5B] text-xl font-bold mb-2">Free Class Saham</h3>
-              <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+              <h3 className="text-white text-xl font-bold mb-2">Free Class Saham</h3>
+              <p className="text-white/60 text-sm mb-6 leading-relaxed">
                 Cocok untuk kamu yang baru mau kenalan dengan dunia saham dan ingin tahu apakah investasi saham cocok untukmu.
               </p>
               <ul className="space-y-3 mb-7 flex-1">
                 {freeItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
-                    <span className="text-emerald-500"><CheckIcon /></span>
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-white/70">
+                    <span className="text-emerald-400"><CheckIcon /></span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-4 border-t border-slate-100">
+              <div className="mt-auto pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}>
                 <div className="mb-4">
-                  <span className="text-2xl font-bold text-[#172A5B]">Gratis</span>
-                  <span className="text-slate-400 text-sm ml-2">/ sekali masuk</span>
+                  <span className="text-2xl font-bold text-white">Gratis</span>
+                  <span className="text-white/40 text-sm ml-2">/ sekali masuk</span>
                 </div>
                 <a
                   href="https://wa.me/62"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 border-2 border-[#651818] text-[#651818] hover:bg-[#651818] hover:text-white font-semibold rounded-xl text-sm text-center transition-all duration-200"
+                  className="block w-full py-3 border-2 border-[#e8b4b4] text-[#e8b4b4] hover:bg-[#651818] hover:border-[#651818] hover:text-white font-semibold rounded-xl text-sm text-center transition-all duration-200"
                 >
                   Daftar Gratis
                 </a>
@@ -81,8 +84,7 @@ export default function Classes() {
 
           {/* Main class */}
           <ScrollReveal delay={2}>
-            <div className="relative bg-[#172A5B] rounded-2xl border-2 border-[#651818] p-7 h-full flex flex-col shadow-xl shadow-[#172A5B]/25">
-              {/* Popular badge */}
+            <div className="relative bg-[#172A5B]/60 rounded-2xl border-2 border-[#651818] p-7 h-full flex flex-col shadow-xl shadow-black/30 backdrop-blur-sm">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <span className="inline-block px-4 py-1 bg-[#651818] text-white text-xs font-bold rounded-full uppercase tracking-wide shadow-lg">
                   🔥 Early Bird
@@ -123,7 +125,7 @@ export default function Classes() {
                   href="https://wa.me/62"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3.5 bg-[#651818] hover:bg-[#7d2020] text-white font-bold rounded-xl text-sm text-center transition-all duration-200 shadow-lg shadow-[#651818]/40 hover:shadow-xl hover:shadow-[#651818]/50 hover:-translate-y-0.5"
+                  className="block w-full py-3.5 bg-[#651818] hover:bg-[#7d2020] text-white font-bold rounded-xl text-sm text-center transition-all duration-200 shadow-lg shadow-[#651818]/40 hover:shadow-xl hover:-translate-y-0.5"
                 >
                   Daftar Sekarang
                 </a>

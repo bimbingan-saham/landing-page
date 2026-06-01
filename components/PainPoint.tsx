@@ -10,9 +10,6 @@ const pains = [
     ),
     title: "Takut Salah Pilih Saham",
     desc: "Mau investasi tapi takut salah pilih saham dan rugi besar? Bingung mana yang benar-benar berpotensi dan mana yang jebakan?",
-    color: "from-red-50 to-rose-50",
-    iconBg: "bg-red-100",
-    iconColor: "text-red-500",
   },
   {
     icon: (
@@ -23,9 +20,6 @@ const pains = [
     ),
     title: "Sudah Baca Tapi Masih Bingung",
     desc: "Sudah baca artikel, nonton YouTube, ikut webinar — tapi masih bingung harus mulai dari mana dan langkah konkretnya apa?",
-    color: "from-amber-50 to-yellow-50",
-    iconBg: "bg-amber-100",
-    iconColor: "text-amber-500",
   },
   {
     icon: (
@@ -36,21 +30,18 @@ const pains = [
     ),
     title: "Takut Kena Saham Gorengan",
     desc: "Takut kena saham gorengan atau ditipu oknum tidak bertanggung jawab yang mengatasnamakan investasi tapi malah merugikan?",
-    color: "from-blue-50 to-indigo-50",
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-500",
   },
 ];
 
 export default function PainPoint() {
   return (
-    <section className="bg-slate-50 py-20 px-5">
+    <section className="bg-transparent py-20 px-5">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal className="text-center mb-14">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#172A5B] mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
             Apakah Kamu Merasakan Ini?
           </h2>
-          <p className="text-slate-500 text-lg max-w-xl mx-auto">
+          <p className="text-white/60 text-lg max-w-xl mx-auto">
             Kalau iya, kamu tidak sendirian. Ribuan orang merasakan hal yang sama sebelum menemukan cara yang benar.
           </p>
         </ScrollReveal>
@@ -58,14 +49,20 @@ export default function PainPoint() {
         <div className="grid sm:grid-cols-3 gap-6">
           {pains.map((item, i) => (
             <ScrollReveal key={i} delay={(i + 1) as 1 | 2 | 3}>
-              <div className={`group bg-gradient-to-br ${item.color} rounded-2xl p-7 border border-slate-100 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 h-full`}>
-                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${item.iconBg} ${item.iconColor} mb-5`}>
+              <div
+                className="group rounded-2xl p-7 h-full hover:-translate-y-1 transition-all duration-300"
+                style={{
+                  background: "rgba(255,255,255,0.07)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 text-white mb-5">
                   {item.icon}
                 </div>
-                <h3 className="text-[#172A5B] font-bold text-lg mb-3 leading-snug">
+                <h3 className="text-white font-bold text-lg mb-3 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-white/60 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>

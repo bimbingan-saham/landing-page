@@ -45,7 +45,7 @@ const features = [
 
 export default function WhyUs() {
   return (
-    <section className="bg-[#172A5B] py-20 px-5">
+    <section className="bg-transparent py-20 px-5">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal className="text-center mb-14">
           <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-white/80 uppercase tracking-widest mb-4">

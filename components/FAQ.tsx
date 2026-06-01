@@ -30,16 +30,16 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-white py-20 px-5">
+    <section id="faq" className="bg-transparent py-20 px-5">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal className="text-center mb-12">
-          <span className="inline-block px-3 py-1 bg-[#172A5B]/10 border border-[#172A5B]/20 rounded-full text-xs font-semibold text-[#172A5B] uppercase tracking-widest mb-4">
+          <span className="inline-block px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-white/80 uppercase tracking-widest mb-4">
             FAQ
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#172A5B] mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
             Pertanyaan yang Sering Ditanyakan
           </h2>
-          <p className="text-slate-500 text-base">
+          <p className="text-white/60 text-base">
             Masih ada pertanyaan? Hubungi kami langsung via WhatsApp.
           </p>
         </ScrollReveal>
@@ -48,25 +48,25 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <ScrollReveal key={i} delay={Math.min(i + 1, 5) as 1 | 2 | 3 | 4 | 5}>
               <div
-                className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
-                  open === i
-                    ? "border-[#172A5B]/30 shadow-md shadow-[#172A5B]/5"
-                    : "border-slate-200 hover:border-[#172A5B]/20"
-                }`}
+                className="rounded-2xl overflow-hidden transition-all duration-200"
+                style={{
+                  background: open === i ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.06)",
+                  border: open === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.12)",
+                }}
               >
                 <button
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
                   onClick={() => setOpen(open === i ? null : i)}
                   aria-expanded={open === i}
                 >
-                  <span className={`font-semibold text-sm sm:text-base leading-snug transition-colors ${open === i ? "text-[#172A5B]" : "text-slate-700"}`}>
+                  <span className="font-semibold text-sm sm:text-base leading-snug text-white/85">
                     {faq.q}
                   </span>
                   <span
                     className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 ${
                       open === i
-                        ? "bg-[#172A5B] text-white rotate-45"
-                        : "bg-slate-100 text-slate-500"
+                        ? "bg-white text-[#172A5B] rotate-45"
+                        : "bg-white/10 text-white/60"
                     }`}
                   >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 <div className={`accordion-content ${open === i ? "open" : ""}`}>
-                  <div className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                  <div className="px-6 pb-5 text-white/60 text-sm leading-relaxed">
                     {faq.a}
                   </div>
                 </div>
