@@ -2,8 +2,10 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StockTicker from "@/components/StockTicker";
 import PainPoint from "@/components/PainPoint";
+import InsiderNews from "@/components/InsiderNews";
+import CatalystAnalysis from "@/components/CatalystAnalysis";
 import WhyUs from "@/components/WhyUs";
-import AboutInstructor from "@/components/AboutInstructor";
+import LearningOutcomes from "@/components/LearningOutcomes";
 import Classes from "@/components/Classes";
 import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
@@ -17,8 +19,10 @@ export default function Home() {
       <Hero />
       <StockTicker />
       <PainPoint />
+      <InsiderNews />
+      <CatalystAnalysis />
       <WhyUs />
-      <AboutInstructor />
+      <LearningOutcomes />
       <Classes />
       <Guarantee />
       <FAQ />

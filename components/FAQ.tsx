@@ -5,24 +5,28 @@ import ScrollReveal from "./ScrollReveal";
 
 const faqs = [
   {
-    q: "Apakah cocok untuk yang belum tahu saham sama sekali?",
-    a: "Ya, sangat cocok! Kelas ini dirancang dari nol, mulai dari apa itu saham, bagaimana cara kerjanya, sampai strategi lanjutan. Tidak ada pengetahuan awal yang diperlukan — cukup semangat dan keinginan untuk belajar.",
+    q: "Saya pemula total dan tidak punya latar akuntansi — apakah cocok?",
+    a: "Sangat cocok. Materi dirancang khusus untuk pemula. Kamu tidak perlu jadi akuntan — kita hanya pelajari bagian penting saja.",
   },
   {
-    q: "Bagaimana jika tidak bisa hadir di sesi live?",
-    a: "Tidak perlu khawatir. Setiap sesi live via Zoom akan direkam dan rekaman tersebut akan tersedia untuk kamu akses kapan saja. Jadi kamu tetap bisa belajar meskipun ada halangan di jadwal.",
+    q: "Apa itu Catalyst Analysis?",
+    a: "Metode untuk menemukan katalis pertumbuhan perusahaan — pemicu yang akan mendorong harga saham naik. Salah satu sumber katalis paling powerful adalah laporan keuangan.",
   },
   {
-    q: "Apa itu garansi bimbingan seumur hidup?",
-    a: "Artinya setelah kamu mengikuti kelas, kamu mendapatkan akses ke grup komunitas eksklusif tanpa batas waktu. Kamu bisa terus bertanya, berdiskusi, dan mendapat bimbingan dari instruktur kapanpun kamu butuhkan — tanpa biaya tambahan.",
+    q: "Apakah format kelasnya video atau live?",
+    a: "Saat ini berupa video course yang bisa ditonton kapan saja. Akses seumur hidup, termasuk update materi di masa depan.",
   },
   {
-    q: "Bagaimana cara mendaftar dan membayar?",
-    a: "Caranya mudah! Klik tombol 'Daftar Sekarang' dan kamu akan langsung diarahkan ke WhatsApp instruktur. Tim kami akan membantu proses pendaftaran dan pembayaran secara langsung melalui WhatsApp.",
+    q: "Apakah ada grup diskusi?",
+    a: "Ya. Setelah mendaftar, kamu akan dimasukkan ke grup komunitas eksklusif untuk diskusi dan tanya jawab.",
   },
   {
-    q: "Apakah ada jaminan profit setelah ikut kelas?",
-    a: "Tidak ada. Investasi saham selalu mengandung risiko dan tidak ada yang bisa menjamin keuntungan. Yang kami ajarkan adalah cara analisis yang tepat, ilmiah, dan terstruktur — agar kamu bisa membuat keputusan investasi yang lebih cerdas dan terhindar dari jebakan.",
+    q: "Apakah ada jaminan profit?",
+    a: "Tidak ada. Investasi selalu memiliki risiko. Yang kami ajarkan adalah cara analisis yang tepat agar kamu bisa membuat keputusan sendiri dengan lebih yakin.",
+  },
+  {
+    q: "Bagaimana cara daftar dan bayar?",
+    a: "Klik tombol 'Mulai Belajar Sekarang', kamu akan diarahkan ke WhatsApp untuk proses pendaftaran dan pembayaran.",
   },
 ];
 

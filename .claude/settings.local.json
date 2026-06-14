@@ -21,7 +21,10 @@
       "Bash(curl -s http://localhost:3000)",
       "Bash(npx tsc *)",
       "Bash(pkill -f \"next dev\")",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(npx playwright *)",
+      "Bash(node *)",
+      "Bash(git add *)"
     ]
   }
 }

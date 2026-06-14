@@ -67,7 +67,7 @@ export default function StockTicker() {
       <div className="max-w-6xl mx-auto px-5 mb-6">
         <ScrollReveal>
           <p className="text-center text-white/60 text-xs font-semibold uppercase tracking-widest">
-            Saham dengan Kenaikan Fantastis yang Kami Bahas
+            Saham yang Terdeteksi Lebih Dulu Lewat Laporan Keuangan
           </p>
         </ScrollReveal>
       </div>

@@ -15,10 +15,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Bimbingan Saham — Dibimbing Sampai Jago",
+  title: "Bimbingan Saham — Catalyst Analysis: Baca Laporan Keuangan, Temukan Multi-Bagger",
   description:
-    "Belajar saham langsung dari Dosen S3 Ekonomi-Akuntansi. Dari 0 sampai tau cara mainnya — dengan garansi bimbingan seumur hidup.",
-  keywords: ["bimbingan saham", "kelas saham", "investasi saham", "belajar saham"],
+    "Pelajari Catalyst Analysis — metode untuk menemukan katalis pertumbuhan perusahaan dari laporan keuangan. Video course oleh Dosen Ekonomi & Akuntansi. Akses seumur hidup.",
+  keywords: ["bimbingan saham", "catalyst analysis", "laporan keuangan", "belajar saham", "investasi saham", "video course saham"],
 };
 
 export default function RootLayout({
