@@ -1,5 +1,5 @@
 
-const links = ["Tentang", "Kelas", "FAQ"];
+const links = ["Tentang", "Produk", "FAQ"];
 const socialLinks = [
   {
     label: "Instagram",
