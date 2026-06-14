@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 interface Stock {
@@ -6,15 +7,16 @@ interface Stock {
   exitPrice: number;
   pct: number;
   color: string;
+  logo: string;
 }
 
 const stocks: Stock[] = [
-  { code: "BUMI", entryPrice: 115,  exitPrice: 422,  pct: 267, color: "#e74c3c" },
-  { code: "KETR", entryPrice: 590,  exitPrice: 1480, pct: 151, color: "#3498db" },
-  { code: "CUAN", entryPrice: 1890, exitPrice: 2280, pct: 21,  color: "#2ecc71" },
-  { code: "TOBA", entryPrice: 860,  exitPrice: 960,  pct: 12,  color: "#f39c12" },
-  { code: "APEX", entryPrice: 238,  exitPrice: 314,  pct: 32,  color: "#9b59b6" },
-  { code: "GTSI", entryPrice: 302,  exitPrice: 344,  pct: 14,  color: "#1abc9c" },
+  { code: "GTSI", entryPrice: 104,  exitPrice: 400,  pct: 285, color: "#1abc9c", logo: "/images/GTSI.png" },
+  { code: "BUMI", entryPrice: 115,  exitPrice: 422,  pct: 267, color: "#e74c3c", logo: "/images/BUMI.png" },
+  { code: "KETR", entryPrice: 590,  exitPrice: 1480, pct: 151, color: "#3498db", logo: "/images/KETR.png" },
+  { code: "APEX", entryPrice: 130,  exitPrice: 270,  pct: 108, color: "#9b59b6", logo: "/images/APEX.png" },
+  { code: "TRIN", entryPrice: 940,  exitPrice: 1600, pct: 70,  color: "#f39c12", logo: "/images/TRIN.png" },
+  { code: "TOBA", entryPrice: 800,  exitPrice: 1315, pct: 64,  color: "#f39c12", logo: "/images/TOBA.png" },
 ];
 
 function fmt(n: number) {
@@ -31,12 +33,18 @@ function TickerCard({ stock }: { stock: Stock }) {
         minWidth: "220px",
       }}
     >
-      {/* Initials avatar */}
+      {/* Logo */}
       <div
-        className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-xs"
+        className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-xs overflow-hidden"
         style={{ background: stock.color }}
       >
-        {stock.code.slice(0, 2)}
+        <Image
+          src={stock.logo}
+          alt={stock.code}
+          width={40}
+          height={40}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Info */}
@@ -72,7 +80,6 @@ export default function StockTicker() {
         </ScrollReveal>
       </div>
 
-      {/* mask-image fades edges regardless of background color */}
       <div
         className="relative"
         style={{
