@@ -28,7 +28,9 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(grep -E '\\\\.\\(html|tsx|jsx|ts|js|json\\)$')",
-      "Bash(sips *)"
+      "Bash(sips *)",
+      "Bash(convert --version)",
+      "Bash(xxd /Users/beryansyah/Desktop/bimbingan-saham/app/favicon.ico)"
     ]
   }
 }
