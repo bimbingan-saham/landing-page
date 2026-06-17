@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   description:
     "Pelajari Catalyst Analysis — metode untuk menemukan katalis pertumbuhan perusahaan dari laporan keuangan. Video course oleh Dosen Ekonomi & Akuntansi. Akses seumur hidup.",
   keywords: ["bimbingan saham", "catalyst analysis", "laporan keuangan", "belajar saham", "investasi saham", "video course saham"],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
