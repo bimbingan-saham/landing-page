@@ -136,10 +136,6 @@ const intensiveFeatures = [
 type HoveredPart = number | null;
 
 export default function Classes() {
-  const [freeEmail, setFreeEmail] = useState("");
-  const [freeSubmitted, setFreeSubmitted] = useState(false);
-  const [waitlistEmail, setWaitlistEmail] = useState("");
-  const [waitlistSubmitted, setWaitlistSubmitted] = useState(false);
   const [hoveredPart, setHoveredPart] = useState<HoveredPart>(null);
   const [hoveredBundleBtn, setHoveredBundleBtn] = useState(false);
   const [hoveredFreeBtn, setHoveredFreeBtn] = useState(false);
@@ -194,56 +190,27 @@ export default function Classes() {
           </div>
 
           <div className="flex-1 min-w-72">
-            {freeSubmitted ? (
-              <p style={{ color: GOLD, fontWeight: 600, fontSize: "15px" }}>
-                ✓ Cek email kamu untuk link video gratis!
-              </p>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setFreeSubmitted(true);
-                }}
-                className="flex flex-wrap gap-2"
-              >
-                <input
-                  type="email"
-                  required
-                  value={freeEmail}
-                  onChange={(e) => setFreeEmail(e.target.value)}
-                  placeholder="Email kamu..."
-                  style={{
-                    flex: "1 1 180px",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    borderRadius: "8px",
-                    padding: "10px 16px",
-                    color: "#fff",
-                    fontSize: "14px",
-                    outline: "none",
-                  }}
-                />
-                <button
-                  type="submit"
-                  onMouseEnter={() => setHoveredFreeBtn(true)}
-                  onMouseLeave={() => setHoveredFreeBtn(false)}
-                  style={{
-                    background: hoveredFreeBtn ? GOLD : "transparent",
-                    border: `2px solid ${GOLD}`,
-                    color: hoveredFreeBtn ? "#1a0800" : GOLD,
-                    borderRadius: "8px",
-                    padding: "10px 20px",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Tonton Sekarang
-                </button>
-              </form>
-            )}
+            <a
+              href="#"
+              onMouseEnter={() => setHoveredFreeBtn(true)}
+              onMouseLeave={() => setHoveredFreeBtn(false)}
+              style={{
+                display: "inline-block",
+                background: hoveredFreeBtn ? GOLD : "transparent",
+                border: `2px solid ${GOLD}`,
+                color: hoveredFreeBtn ? "#1a0800" : GOLD,
+                borderRadius: "8px",
+                padding: "10px 24px",
+                fontWeight: 600,
+                fontSize: "14px",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Belajar Sekarang
+            </a>
           </div>
         </div>
 
@@ -447,7 +414,7 @@ export default function Classes() {
                   marginBottom: "8px",
                 }}
               >
-                Bundel Lengkap
+                Bundling Lengkap
               </h2>
               <p
                 style={{
@@ -543,7 +510,7 @@ export default function Classes() {
                 filter: hoveredBundleBtn ? "brightness(1.15)" : "none",
               }}
             >
-              Ambil Bundel Sekarang →
+              Ambil Bundling Sekarang →
             </button>
           </div>
         </div>
@@ -658,63 +625,29 @@ export default function Classes() {
             </span>
           </div>
 
-          {/* Waitlist form */}
+          {/* Waitlist CTA */}
           <div style={{ maxWidth: "480px", margin: "0 auto", textAlign: "center" }}>
-            {waitlistSubmitted ? (
-              <p style={{ color: GOLD, fontWeight: 600, fontSize: "16px" }}>
-                ✓ Kamu sudah masuk waiting list! Kami kabari saat batch berikutnya dibuka.
-              </p>
-            ) : (
-              <>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setWaitlistSubmitted(true);
-                  }}
-                  className="flex flex-wrap gap-2 mb-3"
-                >
-                  <input
-                    type="email"
-                    required
-                    value={waitlistEmail}
-                    onChange={(e) => setWaitlistEmail(e.target.value)}
-                    placeholder="Email kamu..."
-                    style={{
-                      flex: "1 1 200px",
-                      background: "rgba(255,255,255,0.1)",
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      borderRadius: "8px",
-                      padding: "12px 16px",
-                      color: "#fff",
-                      fontSize: "14px",
-                      outline: "none",
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    onMouseEnter={() => setHoveredWaitBtn(true)}
-                    onMouseLeave={() => setHoveredWaitBtn(false)}
-                    style={{
-                      background: hoveredWaitBtn ? GOLD : "transparent",
-                      border: `2px solid ${GOLD}`,
-                      color: hoveredWaitBtn ? "#1a0800" : GOLD,
-                      borderRadius: "8px",
-                      padding: "12px 20px",
-                      fontWeight: 600,
-                      fontSize: "14px",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Daftar Waiting List
-                  </button>
-                </form>
-                <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px", margin: 0 }}>
-                  Kami kabari saat batch berikutnya dibuka.
-                </p>
-              </>
-            )}
+            <a
+              href="#"
+              onMouseEnter={() => setHoveredWaitBtn(true)}
+              onMouseLeave={() => setHoveredWaitBtn(false)}
+              style={{
+                display: "inline-block",
+                background: hoveredWaitBtn ? GOLD : "transparent",
+                border: `2px solid ${GOLD}`,
+                color: hoveredWaitBtn ? "#1a0800" : GOLD,
+                borderRadius: "8px",
+                padding: "12px 28px",
+                fontWeight: 600,
+                fontSize: "15px",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Daftar Waiting List
+            </a>
           </div>
         </div>
 

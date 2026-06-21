@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Tentang", href: "#tentang" },
-  { label: "Produk", href: "#kelas" },
+  { label: "Belajar Sekarang", href: "#produk" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -57,7 +57,7 @@ export default function Navbar() {
             href="#kelas"
             className="px-5 py-2.5 bg-[#651818] hover:bg-[#7d2020] text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-[#651818]/30 hover:-translate-y-0.5"
           >
-            Daftar Sekarang
+            Gabung Grup Bimbingan
           </a>
         </div>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="block mt-2 px-4 py-2.5 bg-[#651818] hover:bg-[#7d2020] text-white text-sm font-semibold rounded-lg transition-all text-center"
           >
-            Daftar Sekarang
+            Gabung Grup Bimbingan
           </a>
         </div>
       </div>
