@@ -44,6 +44,24 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className="px-4 py-2 text-white/80 hover:text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all duration-200"
+                style={
+                  link.href === "#produk"
+                    ? {
+                        border: "1px solid #D4A857",
+                        borderRadius: "6px",
+                        padding: "6px 16px",
+                        color: "#D4A857",
+                      }
+                    : undefined
+                }
+                onMouseEnter={(e) => {
+                  if (link.href === "#produk")
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(212,168,87,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  if (link.href === "#produk")
+                    (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                }}
               >
                 {link.label}
               </a>

@@ -148,16 +148,16 @@ export default function Classes() {
 
         {/* ── 1. FREE CLASS ── */}
         <div
-          className="flex flex-wrap items-center gap-6"
+          className="flex flex-col md:flex-row md:items-center gap-6"
           style={{
             background: "rgba(255,255,255,0.05)",
             border: `2px solid ${GOLD}`,
             borderRadius: "16px",
-            padding: "clamp(24px, 4vw, 40px)",
+            padding: "28px 36px",
             marginBottom: "72px",
           }}
         >
-          <div className="flex-1 min-w-64">
+          <div style={{ flex: 1 }}>
             <span
               style={{
                 background: "rgba(212,168,87,0.15)",
@@ -169,7 +169,7 @@ export default function Classes() {
                 letterSpacing: "0.08em",
                 padding: "4px 12px",
                 display: "inline-block",
-                marginBottom: "14px",
+                marginBottom: "12px",
               }}
             >
               GRATIS
@@ -177,32 +177,32 @@ export default function Classes() {
             <h3
               style={{
                 color: "#fff",
-                fontSize: "clamp(18px,2.5vw,22px)",
+                fontSize: "clamp(17px,2.2vw,21px)",
                 fontWeight: 700,
-                marginBottom: "8px",
+                marginBottom: "6px",
               }}
             >
               Kenapa Orang Bisa Kaya dari Saham?
             </h3>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "15px", margin: 0 }}>
+            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "14px", margin: 0 }}>
               Video preview 10 menit — kenalan dengan dunia saham sebelum mulai belajar.
             </p>
           </div>
 
-          <div className="flex-1 min-w-72">
+          <div className="md:flex-shrink-0">
             <a
               href="#"
               onMouseEnter={() => setHoveredFreeBtn(true)}
               onMouseLeave={() => setHoveredFreeBtn(false)}
+              className="block md:inline-block text-center"
               style={{
-                display: "inline-block",
                 background: hoveredFreeBtn ? GOLD : "transparent",
                 border: `2px solid ${GOLD}`,
                 color: hoveredFreeBtn ? "#1a0800" : GOLD,
-                borderRadius: "8px",
-                padding: "10px 24px",
-                fontWeight: 600,
-                fontSize: "14px",
+                borderRadius: "10px",
+                padding: "14px 36px",
+                fontWeight: 700,
+                fontSize: "16px",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
                 textDecoration: "none",
