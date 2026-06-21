@@ -1,16 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const navLinks = [
+const desktopLinks = [
   { label: "Tentang", href: "#tentang" },
   { label: "Belajar Sekarang", href: "#produk" },
   { label: "FAQ", href: "#faq" },
 ];
 
+const mobileDropdownLinks = [
+  { label: "Tentang", href: "#tentang" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Gabung Grup Bimbingan", href: "#kelas" },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -18,8 +25,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
+
   return (
     <header
+      ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#0F1E42]/95 backdrop-blur-md shadow-lg shadow-black/20"
@@ -39,19 +57,14 @@ export default function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
+          {desktopLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 className="px-4 py-2 text-white/80 hover:text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all duration-200"
                 style={
                   link.href === "#produk"
-                    ? {
-                        border: "1px solid #D4A857",
-                        borderRadius: "6px",
-                        padding: "6px 16px",
-                        color: "#D4A857",
-                      }
+                    ? { border: "1px solid #D4A857", borderRadius: "6px", padding: "6px 16px", color: "#D4A857" }
                     : undefined
                 }
                 onMouseEnter={(e) => {
@@ -69,7 +82,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
+        {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#kelas"
@@ -79,26 +92,45 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden p-2 text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-          </div>
-        </button>
+        {/* Mobile: Belajar Sekarang + hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <a
+            href="#produk"
+            style={{
+              border: "1px solid #D4A857",
+              borderRadius: "6px",
+              padding: "6px 14px",
+              color: "#D4A857",
+              fontSize: "13px",
+              fontWeight: 600,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              transition: "background 0.2s ease",
+            }}
+          >
+            Belajar Sekarang
+          </a>
+          <button
+            className="p-2 text-white"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <div className="space-y-1.5">
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </div>
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-64" : "max-h-0"}`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-48" : "max-h-0"}`}
+        style={{ background: "rgba(10,16,40,0.95)", backdropFilter: "blur(12px)" }}
       >
-        <div className="bg-[#0F1E42]/98 backdrop-blur-md px-5 pb-4 space-y-1">
-          {navLinks.map((link) => (
+        <div className="px-5 py-3 space-y-1">
+          {mobileDropdownLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -108,13 +140,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#kelas"
-            onClick={() => setMenuOpen(false)}
-            className="block mt-2 px-4 py-2.5 bg-[#651818] hover:bg-[#7d2020] text-white text-sm font-semibold rounded-lg transition-all text-center"
-          >
-            Gabung Grup Bimbingan
-          </a>
         </div>
       </div>
     </header>
