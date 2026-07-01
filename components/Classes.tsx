@@ -8,49 +8,53 @@ const GOLD = "#D4A857";
 const parts = [
   {
     n: 1,
-    title: "Fondasi",
-    meta: "Bab 1–2 · ~40 menit · 2 video",
+    title: “Fondasi”,
+    meta: “Bab 1–2 · ~40 menit · 2 video”,
     bullets: [
-      "Kenapa orang nyangkut puluhan juta di saham — dan cara hindarinya",
-      'Cara akses "rapor rahasia" tiap perusahaan saham di Indonesia (gratis & legal)',
-      "Mindset 1% investor yang konsisten cuan vs 99% yang nyangkut",
+      “Kenapa orang nyangkut puluhan juta di saham — dan cara hindarinya”,
+      'Cara akses “rapor rahasia” tiap perusahaan saham di Indonesia (gratis & legal)',
+      “Mindset 1% investor yang konsisten cuan vs 99% yang nyangkut”,
     ],
-    price: "Rp 49.000",
+    price: “Rp 49.000”,
+    href: “https://bimbingan-saham.myr.id/pl/bimbingan-saham-part-1-fondasi”,
   },
   {
     n: 2,
-    title: "Tiga Laporan Inti",
-    meta: "Bab 3–5 · ~75 menit · 3 video",
+    title: “Tiga Laporan Inti”,
+    meta: “Bab 3–5 · ~75 menit · 3 video”,
     bullets: [
-      "Bedain perusahaan yang untung beneran vs cuma “akal-akalan akuntansi”",
-      "Endus perusahaan yang kelihatan kaya padahal lagi sekarat",
-      "Sinyal tersembunyi di arus kas yang bikin investor pro masuk duluan",
+      “Bedain perusahaan yang untung beneran vs cuma “akal-akalan akuntansi””,
+      “Endus perusahaan yang kelihatan kaya padahal lagi sekarat”,
+      “Sinyal tersembunyi di arus kas yang bikin investor pro masuk duluan”,
     ],
-    price: "Rp 99.000",
+    price: “Rp 99.000”,
+    href: “https://bimbingan-saham.myr.id/pl/bimbingan-saham-part-2-tiga-laporan-inti”,
   },
   {
     n: 3,
-    title: "Alat Analisis",
-    meta: "Bab 6–9 · ~90 menit · 4 video",
+    title: “Alat Analisis”,
+    meta: “Bab 6–9 · ~90 menit · 4 video”,
     bullets: [
-      "2 angka kunci buat tahu perusahaan yang bisa cetak cuan terus",
-      "Deteksi perusahaan yang utangnya bakal nyekik — sebelum harganya anjlok",
-      "Tahu saham mahal atau murah dalam 30 detik — jangan beli kemahalan lagi",
-      "Pilih saham yang konsisten bagi-bagi cuan ke kamu tiap tahun",
+      “2 angka kunci buat tahu perusahaan yang bisa cetak cuan terus”,
+      “Deteksi perusahaan yang utangnya bakal nyekik — sebelum harganya anjlok”,
+      “Tahu saham mahal atau murah dalam 30 detik — jangan beli kemahalan lagi”,
+      “Pilih saham yang konsisten bagi-bagi cuan ke kamu tiap tahun”,
     ],
-    price: "Rp 129.000",
+    price: “Rp 129.000”,
+    href: “https://bimbingan-saham.myr.id/pl/bimbingan-saham-part-3-alat-analisis”,
   },
   {
     n: 4,
-    title: "Praktik Nyata",
-    meta: "Bab 10–12 · ~80 menit · 4 video",
+    title: “Praktik Nyata”,
+    meta: “Bab 10–12 · ~80 menit · 4 video”,
     bullets: [
-      "4 red flags yang bikin saham anjlok mendadak — yang 90% pemula skip",
-      "Cara bedah perusahaan dari nol (sistem yang bisa kamu pakai seumur hidup)",
-      "Checklist 15 menit — saring ratusan saham, temuin yang berpotensi naik",
-      "BONUS: Teaser metode khusus cari saham yang berpotensi naik puluhan kali",
+      “4 red flags yang bikin saham anjlok mendadak — yang 90% pemula skip”,
+      “Cara bedah perusahaan dari nol (sistem yang bisa kamu pakai seumur hidup)”,
+      “Checklist 15 menit — saring ratusan saham, temuin yang berpotensi naik”,
+      “BONUS: Teaser metode khusus cari saham yang berpotensi naik puluhan kali”,
     ],
-    price: "Rp 129.000",
+    price: “Rp 129.000”,
+    href: “https://bimbingan-saham.myr.id/pl/bimbingan-saham-part-4-praktik-nyata”,
   },
 ];
 
@@ -191,7 +195,9 @@ export default function Classes() {
 
           <div className="md:flex-shrink-0">
             <a
-              href="#"
+              href="https://bimbingan-saham.myr.id/pl/bimbingan-saham-video-gratis"
+              target="_blank"
+              rel="noopener noreferrer"
               onMouseEnter={() => setHoveredFreeBtn(true)}
               onMouseLeave={() => setHoveredFreeBtn(false)}
               className="block md:inline-block text-center"
@@ -351,7 +357,10 @@ export default function Classes() {
                   <span style={{ color: "#fff", fontWeight: 700, fontSize: "22px" }}>
                     {part.price}
                   </span>
-                  <button
+                  <a
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onMouseEnter={() => setHoveredPartBtn(part.n)}
                     onMouseLeave={() => setHoveredPartBtn(null)}
                     style={{
@@ -365,10 +374,11 @@ export default function Classes() {
                       cursor: "pointer",
                       transition: "all 0.3s ease",
                       whiteSpace: "nowrap",
+                      textDecoration: "none",
                     }}
                   >
                     Beli Part Ini →
-                  </button>
+                  </a>
                 </div>
               </div>
             );
@@ -489,10 +499,14 @@ export default function Classes() {
           </div>
 
           <div className="text-center mt-10">
-            <button
+            <a
+              href="https://bimbingan-saham.myr.id/pl/bimbingan-saham-bundling-lengkap-part-1-4"
+              target="_blank"
+              rel="noopener noreferrer"
               onMouseEnter={() => setHoveredBundleBtn(true)}
               onMouseLeave={() => setHoveredBundleBtn(false)}
               style={{
+                display: "inline-block",
                 background: MAROON,
                 border: "none",
                 color: "#fff",
@@ -503,6 +517,7 @@ export default function Classes() {
                 cursor: "pointer",
                 transition: "all 0.3s ease",
                 letterSpacing: "0.02em",
+                textDecoration: "none",
                 boxShadow: hoveredBundleBtn
                   ? "0 10px 32px rgba(101,24,24,0.55)"
                   : "none",
@@ -511,7 +526,7 @@ export default function Classes() {
               }}
             >
               Ambil Bundling Sekarang →
-            </button>
+            </a>
           </div>
         </div>
 
